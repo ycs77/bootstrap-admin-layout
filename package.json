@@ -1,0 +1,39 @@
+{
+  "name": "bootstrap-admin-layout",
+  "version": "0.1.0",
+  "description": "A simple Bootstrap 4 admin panel layout component, support mobile client.",
+  "author": "Lucas Yang <yangchenshin77@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ycs77/bootstrap-admin-layout.git"
+  },
+  "homepage": "https://github.com/ycs77/bootstrap-admin-layout",
+  "bugs": {
+    "url": "https://github.com/ycs77/bootstrap-admin-layout/issues"
+  },
+  "keywords": [
+    "bootstrap",
+    "bootstrap-admin-layout",
+    "admin",
+    "panel",
+    "layout",
+    "sidebar"
+  ],
+  "scripts": {
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scripts/build.scss dist/bootstrap-admin-layout.css",
+    "css-prefix": "postcss --config scripts/postcss.config.js --replace dist/bootstrap-admin-layout.css",
+    "css-minify": "cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output dist/bootstrap-admin-layout.min.css dist/bootstrap-admin-layout.css",
+    "css-copy-to-docs": "cpx dist/bootstrap-admin-layout.min.css docs",
+    "css-build": "npm-run-all css-compile css-prefix css-minify css-copy-to-docs"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.6.0",
+    "bootstrap": "^4.3.1",
+    "clean-css-cli": "^4.3.0",
+    "cpx": "^1.5.0",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.2"
+  }
+}
