@@ -34,7 +34,7 @@
     "docs-start": "nuxt start -c docs/nuxt.config.js",
     "docs-generate": "nuxt generate -c docs/nuxt.config.js",
     "docs-publish": "sh scripts/docs-publish.sh",
-    "release": "npm-run-all css js"
+    "build": "npm-run-all css js"
   },
   "dependencies": {
     "bootstrap": "^4.3.1"
