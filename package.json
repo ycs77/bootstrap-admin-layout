@@ -32,6 +32,7 @@
     "docs-build": "nuxt build -c docs/nuxt.config.js",
     "docs-start": "nuxt start -c docs/nuxt.config.js",
     "docs-generate": "nuxt generate -c docs/nuxt.config.js",
+    "docs-publish": "sh scripts/docs-publish.sh",
     "release": "npm-run-all css js"
   },
   "dependencies": {
@@ -50,6 +51,7 @@
     "bootstrap-vue": "^2.0.0-rc.26",
     "clean-css-cli": "^4.3.0",
     "cross-env": "^5.2.0",
+    "gh-pages": "^2.0.1",
     "gulp": "^4.0.2",
     "gulp-header": "^2.0.9",
     "gulp-modify-file": "^1.0.1",
