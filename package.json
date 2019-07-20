@@ -33,6 +33,7 @@
     "docs-build": "nuxt build -c docs/nuxt.config.js",
     "docs-start": "nuxt start -c docs/nuxt.config.js",
     "docs-generate": "nuxt generate -c docs/nuxt.config.js",
+    "docs-generate-gh-pages": "cross-env NODE_ENV=gh-pages nuxt generate -c docs/nuxt.config.js",
     "docs-publish": "sh scripts/docs-publish.sh",
     "build": "npm-run-all css js"
   },

@@ -3,6 +3,9 @@ import hljs from 'highlight.js'
 export default {
   mode: 'universal',
   srcDir: __dirname,
+  router: {
+    base: process.env.NODE_ENV === 'gh-pages' ? '/bootstrap-admin-layout/' : ''
+  },
   /*
   ** Headers of the page
   */

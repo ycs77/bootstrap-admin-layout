@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-yarn docs-generate
+yarn docs-generate-gh-pages
 
 git config --global user.email yangchenshin77@gmail.com
 git config --global user.name Lucas Yang
