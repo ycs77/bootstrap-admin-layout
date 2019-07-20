@@ -1,7 +1,7 @@
 module.exports = function(api) {
   let presets = []
 
-  if (api.env('scssbanner')) {
+  if (api.env('scss-banner')) {
     presets.push(['@babel/env'])
   }
 
