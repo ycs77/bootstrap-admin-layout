@@ -2,18 +2,20 @@
   <div>
     <navbar></navbar>
 
-    <div class="layout-container">
+    <div class="layout-container layout-expand-md">
       <div class="layout-sidebar">
-        <ul class="nav navbar-nav nav-root layout-sidebar-content">
-          <li v-for="(item, index) in nav" :class="['nav-item', navAvtive(item.slug)]">
-            <router-link class="nav-link" :to="link(item, index)">
-              <div class="nav-link-icon">
-                <fa :icon="item.icon" class="fa-fw"></fa>
-              </div>
-              <div class="nav-link-name">{{ item.title }}</div>
-            </router-link>
-          </li>
-        </ul>
+        <div class="layout-sidebar-content">
+          <ul class="nav navbar-nav nav-root">
+            <li v-for="(item, index) in nav" :class="['nav-item', navAvtive(item.slug)]">
+              <router-link class="nav-link" :to="link(item, index)">
+                <div class="nav-link-icon">
+                  <fa :icon="item.icon" class="fa-fw"></fa>
+                </div>
+                <div class="nav-link-name">{{ item.title }}</div>
+              </router-link>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="layout-sidebar-overlay"></div>
 
@@ -66,6 +68,7 @@
 <script>
 import { nav } from '~/content'
 import Navbar from '~/components/navbar.vue'
+import BootstrapAdminLayout from '~/../js'
 
 export default {
   props: {
@@ -87,7 +90,7 @@ export default {
       return [
         {
           text: 'Home',
-          href: '/'
+          to: '/'
         },
         {
           text: this.activeItem.title,
@@ -124,6 +127,9 @@ export default {
     navAvtive(slug) {
       return this.isActive(slug) ? 'active' : ''
     }
+  },
+  mounted() {
+    new BootstrapAdminLayout()
   }
 }
 </script>

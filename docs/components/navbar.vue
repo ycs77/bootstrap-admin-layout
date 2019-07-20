@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="md" variant="light" class="fixed-top shadow-sm">
-    <b-navbar-brand href="/">{{ title }}</b-navbar-brand>
+    <b-navbar-brand to="/">{{ title }}</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 

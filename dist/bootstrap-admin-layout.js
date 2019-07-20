@@ -4,27 +4,61 @@
  * Licensed under MIT (https://github.com/ycs77/bootstrap-admin-layout/blob/master/LICENSE)
  */
 
-(function (factory) {
-  typeof define === 'function' && define.amd ? define(factory) :
-  factory();
-}(function () { 'use strict';
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+  typeof define === 'function' && define.amd ? define(['exports'], factory) :
+  (global = global || self, factory(global.bootstrapAdminLayout = {}));
+}(this, function (exports) { 'use strict';
 
-  const sidebarToggler = document.querySelector('.layout-sidebar-toggler');
+  class Sidebar {
+    constructor() {
+      this._listeners();
+    }
 
-  if (sidebarToggler) {
-    sidebarToggler.addEventListener('click', () => {
-      document.body.classList.add('show-sidebar');
-      document.querySelector('.layout-sidebar').classList.add('show');
-    });
+    bindEvent(selector, event, callback) {
+      const element = document.querySelector(selector);
+
+      if (element) {
+        element.addEventListener(event, callback);
+      }
+    }
+
+    _listeners() {
+      this._onTogglerBtnClick();
+
+      this._onOverlayBlockClick();
+    }
+
+    _onTogglerBtnClick() {
+      this.bindEvent('.layout-sidebar-toggler', 'click', () => {
+        document.body.classList.add('show-sidebar');
+        document.querySelector('.layout-sidebar').classList.add('show');
+      });
+    }
+
+    _onOverlayBlockClick() {
+      this.bindEvent('.layout-sidebar-overlay', 'click', () => {
+        document.body.classList.remove('show-sidebar');
+        document.querySelector('.layout-sidebar').classList.remove('show');
+      });
+    }
+
   }
 
-  const sidebarOverlay = document.querySelector('.layout-sidebar-overlay');
+  class BootstrapAdminLayout {
+    constructor() {
+      new Sidebar();
+    }
 
-  if (sidebarOverlay) {
-    sidebarOverlay.addEventListener('click', () => {
-      document.body.classList.remove('show-sidebar');
-      document.querySelector('.layout-sidebar').classList.remove('show');
-    });
   }
+
+  if (typeof window !== 'undefined') {
+    window.BootstrapAdminLayout = BootstrapAdminLayout;
+  }
+
+  exports.Sidebar = Sidebar;
+  exports.default = BootstrapAdminLayout;
+
+  Object.defineProperty(exports, '__esModule', { value: true });
 
 }));

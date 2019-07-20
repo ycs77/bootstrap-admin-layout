@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootstrap Admin Layout Demo</title>
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link  href="/dist/bootstrap-admin-layout.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
+      <a class="navbar-brand" href="#">Bootstrap Admin Layout Demo</a>
+    </nav>
+
+    <div class="layout-container layout-expand-md">
+      <!-- Sidebar -->
+      <div class="layout-sidebar">
+        <div class="layout-sidebar-content">
+          <ul class="nav navbar-nav nav-root">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">
+                <div class="nav-link-icon">
+                  <i class="fas fa-fw fa-home"></i>
+                </div>
+                <div class="nav-link-name">Home</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <div class="nav-link-icon">
+                  <i class="fas fa-fw fa-user"></i>
+                </div>
+                <div class="nav-link-name">User</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <div class="nav-link-icon">
+                  <i class="fas fa-fw fa-cog"></i>
+                </div>
+                <div class="nav-link-name">Settings</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="layout-sidebar-overlay"></div>
+
+      <!-- Content Wrapper -->
+      <div class="layout-content-wrapper">
+        <div class="layout-breadcrumb">
+          <div>
+            <!-- Sidebar Toggler Button -->
+            <button class="layout-sidebar-toggler" type="button" aria-label="Toggle navigation">
+              <span class="layout-sidebar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <!-- Breadcrumb -->
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Page</li>
+            </ol>
+          </nav>
+        </div>
+
+        <div class="layout-content">
+          <main class="px-3">
+            <!-- Content Start -->
+            <div class="text-center py-5">
+              <h1>Bootstrap Admin Layout</h1>
+              <p class="lead">A simple Bootstrap 4 admin panel layout component, support mobile client.</p>
+            </div>
+            <!-- Content End -->
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <script src="/dist/bootstrap-admin-layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/fontawesome.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/solid.min.js"></script>
+    <script>
+    new BootstrapAdminLayout();
+    </script>
+  </body>
+</html>

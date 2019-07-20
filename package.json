@@ -5,6 +5,7 @@
   "description": "A simple Bootstrap 4 admin panel layout component, support mobile client.",
   "author": "Lucas Yang <yangchenshin77@gmail.com>",
   "license": "MIT",
+  "main": "dist/bootstrap-admin-layout.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ycs77/bootstrap-admin-layout.git"

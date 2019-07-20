@@ -1,15 +1,17 @@
-const sidebarToggler = document.querySelector('.layout-sidebar-toggler')
-if (sidebarToggler) {
-  sidebarToggler.addEventListener('click', () => {
-    document.body.classList.add('show-sidebar')
-    document.querySelector('.layout-sidebar').classList.add('show')
-  })
+import Sidebar from './sidebar'
+
+class BootstrapAdminLayout {
+  constructor() {
+    new Sidebar()
+  }
 }
 
-const sidebarOverlay = document.querySelector('.layout-sidebar-overlay')
-if (sidebarOverlay) {
-  sidebarOverlay.addEventListener('click', () => {
-    document.body.classList.remove('show-sidebar')
-    document.querySelector('.layout-sidebar').classList.remove('show')
-  })
+export {
+  Sidebar
+}
+
+export default BootstrapAdminLayout
+
+if (typeof window !== 'undefined') {
+  window.BootstrapAdminLayout = BootstrapAdminLayout
 }
