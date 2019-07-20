@@ -1,0 +1,12 @@
+// Include Bootstrap SCSS
+@import 'variables';
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
+// Import Bootstrap Admin Layout custom SCSS
+@import '@/../scss/bootstrap-admin-layout.scss';
+
+.markdown-body h1 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: .3em;
+}

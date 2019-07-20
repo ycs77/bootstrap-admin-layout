@@ -1,5 +1,6 @@
 {
   "name": "bootstrap-admin-layout",
+  "title": "Bootstrap Admin Layout",
   "version": "0.1.0",
   "description": "A simple Bootstrap 4 admin panel layout component, support mobile client.",
   "author": "Lucas Yang <yangchenshin77@gmail.com>",
@@ -21,19 +22,51 @@
     "sidebar"
   ],
   "scripts": {
+    "css": "npm-run-all css-scss-banner css-compile css-prefix css-minify",
     "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scripts/build.scss dist/bootstrap-admin-layout.css",
     "css-prefix": "postcss --config scripts/postcss.config.js --replace dist/bootstrap-admin-layout.css",
     "css-minify": "cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output dist/bootstrap-admin-layout.min.css dist/bootstrap-admin-layout.css",
-    "css-copy-to-docs": "cpx dist/bootstrap-admin-layout.min.css docs",
-    "css-build": "npm-run-all css-compile css-prefix css-minify css-copy-to-docs"
+    "css-scss-banner": "cross-env NODE_ENV=scssbanner gulp --gulpfile scripts/gulpfile.babel.js updateScssBanner",
+    "js": "rollup --config scripts/rollup.config.js",
+    "docs-dev": "nuxt -c docs/nuxt.config.js",
+    "docs-build": "nuxt build -c docs/nuxt.config.js",
+    "docs-start": "nuxt start -c docs/nuxt.config.js",
+    "docs-generate": "nuxt generate -c docs/nuxt.config.js",
+    "release": "npm-run-all css js"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-brands-svg-icons": "^5.9.0",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
+    "@nuxtjs/markdownit": "^1.2.6",
     "autoprefixer": "^9.6.0",
-    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.0.0-rc.26",
     "clean-css-cli": "^4.3.0",
-    "cpx": "^1.5.0",
+    "cross-env": "^5.2.0",
+    "gulp": "^4.0.2",
+    "gulp-header": "^2.0.9",
+    "gulp-modify-file": "^1.0.1",
+    "highlight.js": "^9.15.8",
+    "lodash": "^4.17.15",
     "node-sass": "^4.12.0",
+    "nodemon": "^1.19.1",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^6.1.2"
+    "nuxt": "^2.8.1",
+    "postcss-cli": "^6.1.2",
+    "rollup": "^1.17.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.1",
+    "sass-loader": "^7.1.0",
+    "vue": "^2.6.10",
+    "vue-functional-data-merge": "^3.1.0"
   }
 }

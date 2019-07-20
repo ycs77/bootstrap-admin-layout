@@ -1,10 +1,10 @@
 /*!
- * Bootstrap Steps v0.1.0 (https://github.com/ycs77/bootstrap-admin-layout)
- * Copyright Lucas Yang <yangchenshin77@gmail.com>
+ * Bootstrap Admin Layout v0.1.0 (https://github.com/ycs77/bootstrap-admin-layout)
+ * Copyright 2019 Lucas Yang <yangchenshin77@gmail.com>
  * Licensed under MIT (https://github.com/ycs77/bootstrap-admin-layout/blob/master/LICENSE)
  */
 
-@import "variables";
+@import 'variables';
 
 .layout-container {
   position: relative;
@@ -14,9 +14,9 @@
 
 .layout-sidebar {
   position: sticky;
-  top: $navbar-height;
+  top: $layout-navbar-height;
   width: 200px;
-  height: calc(100vh - #{$navbar-height});
+  height: calc(100vh - #{$layout-navbar-height});
   background-color: $white;
   border-right: 1px solid rgba($black, .125);
 
@@ -31,7 +31,7 @@
   @include media-breakpoint-down(sm) {
     position: fixed;
     z-index: 1110;
-    top: $navbar-height;
+    top: $layout-navbar-height;
     bottom: 0;
     left: 0;
     transition: transform .2s;
@@ -103,7 +103,7 @@
 .layout-sidebar-overlay {
   position: fixed;
   z-index: 1100;
-  top: $navbar-height;
+  top: $layout-navbar-height;
   left: 0;
   width: 100%;
   height: 100%;
@@ -114,12 +114,20 @@
 .layout-content-wrapper {
   max-width: 100%;
   min-height: 100vh;
-  padding-top: $navbar-height;
+  padding-top: $layout-navbar-height;
   flex: 1;
 }
 
 .layout-content {
   padding: 0;
+}
+
+.layout-alert {
+  &, .alert {
+    margin: 0;
+    border-width: 0 0 1px;
+    border-radius: 0;
+  }
 }
 
 .layout-breadcrumb {

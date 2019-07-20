@@ -1,6 +1,6 @@
 /*!
- * Bootstrap Steps v0.1.0 (https://github.com/ycs77/bootstrap-admin-layout)
- * Copyright Lucas Yang <yangchenshin77@gmail.com>
+ * Bootstrap Admin Layout v0.1.0 (https://github.com/ycs77/bootstrap-admin-layout)
+ * Copyright 2019 Lucas Yang <yangchenshin77@gmail.com>
  * Licensed under MIT (https://github.com/ycs77/bootstrap-admin-layout/blob/master/LICENSE)
  */
 .layout-container {
@@ -125,6 +125,12 @@
 
 .layout-content {
   padding: 0;
+}
+
+.layout-alert, .layout-alert .alert {
+  margin: 0;
+  border-width: 0 0 1px;
+  border-radius: 0;
 }
 
 .layout-breadcrumb {
