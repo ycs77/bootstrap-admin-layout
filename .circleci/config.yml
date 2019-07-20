@@ -24,15 +24,6 @@ jobs:
           paths:
             - bootstrap-admin-layout
 
-  build:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/project
-      - run:
-          name: Build
-          command: yarn build
-
   docs:
     <<: *defaults
     steps:
@@ -44,13 +35,9 @@ jobs:
 
 workflows:
   version: 2
-  setup-and-parallel-test:
+  setup-and-build:
     jobs:
       - setup
-
-      - build:
-          requires:
-            - setup
 
       - docs:
           requires:
