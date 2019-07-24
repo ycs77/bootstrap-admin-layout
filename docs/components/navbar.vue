@@ -6,7 +6,7 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="ml-auto">
-        <b-nav-item to="https://github.com/ycs77/bootstrap-admin-layout" target="_blank">
+        <b-nav-item href="https://github.com/ycs77/bootstrap-admin-layout" target="_blank">
           <fa :icon="['fab', 'github']"></fa>
           Github
         </b-nav-item>
