@@ -22,7 +22,9 @@ Import to bootstrap.scss and build:
 
 *app.js*
 ```js
-import 'bootstrap-admin-layout'
+import BootstrapAdminLayout from 'bootstrap-admin-layout'
+
+new BootstrapAdminLayout()
 ```
 
 Or use CDN:

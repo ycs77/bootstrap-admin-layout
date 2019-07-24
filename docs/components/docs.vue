@@ -54,7 +54,7 @@
           </main>
 
           <footer class="py-3 text-center">
-            <a href="https://github.com/ycs77/bootstrap-admin-layout">
+            <a href="https://github.com/ycs77/bootstrap-admin-layout" target="_blank">
               <fa :icon="['fab', 'github']"></fa>
               Github
             </a>
