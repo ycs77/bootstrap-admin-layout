@@ -83,7 +83,7 @@
 
   .nav-link {
     display: flex;
-    padding: 0.75rem;
+    padding: $layout-sidebar-item-padding-y $layout-sidebar-item-padding-x;
     color: $layout-sidebar-item-color;
     @include hover {
       color: $layout-sidebar-item-hover-color;
