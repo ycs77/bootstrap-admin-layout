@@ -22,9 +22,9 @@ Import to bootstrap.scss and build:
 
 *app.js*
 ```js
-import BootstrapAdminLayout from 'bootstrap-admin-layout'
+import { Sidebar } from 'bootstrap-admin-layout'
 
-new BootstrapAdminLayout()
+new Sidebar()
 ```
 
 Or use CDN:
@@ -36,7 +36,7 @@ Or use CDN:
 <!-- JS -->
 <script src="/path/to/bootstrap-admin-layout.min.js"></script>
 <script>
-new BootstrapAdminLayout();
+new BootstrapAdminLayout.Sidebar();
 </script>
 <!-- Demo use Fontawesome 5 icons -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/fontawesome.min.js"></script>

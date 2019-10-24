@@ -68,7 +68,7 @@
 <script>
 import { nav } from '~/content'
 import Navbar from '~/components/navbar.vue'
-import BootstrapAdminLayout from '~/../js'
+import { Sidebar } from '~/../js'
 
 export default {
   props: {
@@ -129,7 +129,8 @@ export default {
     }
   },
   mounted() {
-    new BootstrapAdminLayout()
+    const sidebar = new Sidebar()
+    sidebar.closeMenu()
   }
 }
 </script>

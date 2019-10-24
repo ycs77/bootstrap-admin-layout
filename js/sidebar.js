@@ -3,6 +3,16 @@ class Sidebar {
     this._listeners()
   }
 
+  openMenu() {
+    document.body.classList.add('show-sidebar')
+    document.querySelector('.layout-sidebar').classList.add('show')
+  }
+
+  closeMenu() {
+    document.body.classList.remove('show-sidebar')
+    document.querySelector('.layout-sidebar').classList.remove('show')
+  }
+
   bindEvent(selector, event, callback) {
     const element = document.querySelector(selector)
     if (element) {
@@ -16,17 +26,11 @@ class Sidebar {
   }
 
   _onTogglerBtnClick() {
-    this.bindEvent('.layout-sidebar-toggler', 'click', () => {
-      document.body.classList.add('show-sidebar')
-      document.querySelector('.layout-sidebar').classList.add('show')
-    })
+    this.bindEvent('.layout-sidebar-toggler', 'click', this.openMenu)
   }
 
   _onOverlayBlockClick() {
-    this.bindEvent('.layout-sidebar-overlay', 'click', () => {
-      document.body.classList.remove('show-sidebar')
-      document.querySelector('.layout-sidebar').classList.remove('show')
-    })
+    this.bindEvent('.layout-sidebar-overlay', 'click', this.closeMenu)
   }
 }
 

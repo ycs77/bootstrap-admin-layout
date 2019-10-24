@@ -1,9 +1,7 @@
 import Sidebar from './sidebar'
 
-class BootstrapAdminLayout {
-  constructor() {
-    new Sidebar()
-  }
+const BootstrapAdminLayout = {
+  Sidebar
 }
 
 export {
